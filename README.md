@@ -9,7 +9,7 @@ Create a new GitHub repo to upload the code and allow version control throught t
 
 ## Milestone 2: Create the variables for the Game
 
-Create the variables for the hangman using basic python commands. For each TODO changes in the code are commited.
+Create the variables for the hangman using basic python commands. For each TASK, changes in the code are commited and pushed to the GitHub repo.
 
 ```python
 """
@@ -36,4 +36,48 @@ word_list = ['watermelon', 'apple', 'strawberries', 'blueberries', 'grapes']
 
 world = random.choice(word_list)
 # print(world) - TASK 2"""
+```
+
+## Milestone 3: Check if the guessed character is in the word
+
+Check if the guessed letter is in the randomly chosen word. Two functions are defined, one to check if the guess is in the chosen word, and another one to check if the guess input is valid. Again, for each TASK, changes in the code are commited and pushed to the GitHub repo.
+
+```python
+"""
+import random
+import string 
+
+
+def check_guess(guess):
+
+    guess = guess.lower()
+
+    if guess in world:
+        print("Good guess!", guess,"is in the word")
+    
+    else:
+        print("Sorry,", guess,"is not in this word")
+
+
+def ask_for_input():
+
+  guess = input("Enter your guess: ") 
+
+  while len(guess) == 1 and guess in alphabet:
+    break
+
+  else:
+    print('Invalid letter. Please, enter a single alphabetical character.')
+  
+  check_guess(guess)
+
+
+
+alphabet = list(string.ascii_lowercase)
+
+word_list = ['watermelon', 'apple', 'strawberries', 'blueberries', 'grapes']
+
+world = random.choice(word_list)
+
+ask_for_input()
 ```
