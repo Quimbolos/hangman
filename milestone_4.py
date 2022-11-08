@@ -12,8 +12,6 @@ class Hangman():
 
     def check_guess(self, guess):
 
-  # TEST ETS TEST
-
         guess = guess.lower()
 
         if guess in self.word:
