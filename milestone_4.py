@@ -2,10 +2,10 @@
 import random
 import string
 class Hangman():
-    def __init__(self, word_list, num_lives = 5):
-        self.word_list = word_list
+    def __init__(self, wordlist, num_lives = 5):
+        self.wordlist = wordlist
         self.num_lives = num_lives
-        self.word = random.choice(self.word_list)
+        self.word = random.choice(self.wordlist)
         self.world_guessed = ['_']*len(self.word)
         self.num_letters = self.world_guessed.count('_')
         self.list_of_guesses = ['']
