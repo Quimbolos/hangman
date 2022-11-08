@@ -7,9 +7,7 @@ guess = input("Enter your guess: ") # TASK 3
 
 ### TASK 4
 
-alphabet = list(string.ascii_lowercase)
-
-if len(guess) == 1 and guess in alphabet:
+if len(guess) == 1 and guess.isalpha():
     print('Good guess!')
 
 else:
