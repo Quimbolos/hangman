@@ -20,5 +20,4 @@ word_list = ['watermelon', 'apple', 'strawberries', 'blueberries', 'grapes']
 word = random.choice(word_list)
 # print(world) - TASK 2
 
-
 # %%
