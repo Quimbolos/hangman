@@ -13,17 +13,13 @@ Create the variables for the hangman using basic python commands. For each TASK,
 
 ```python
 """
-import random
-import string # TASK 4
-
+import random 
 
 guess = input("Enter your guess: ") # TASK 3
 
 ### TASK 4
 
-alphabet = list(string.ascii_lowercase)
-
-if len(guess) == 1 and guess in alphabet:
+if len(guess) == 1 and guess.isalpha():
     print('Good guess!')
 
 else:
@@ -35,7 +31,7 @@ word_list = ['watermelon', 'apple', 'strawberries', 'blueberries', 'grapes']
 # print(word_list) - TASK 1
 
 word = random.choice(word_list)
-# print(word) - TASK 2"""
+# print(world) - TASK 2"""
 ```
 
 ## Milestone 3: Check if the guessed character is in the word
@@ -45,8 +41,10 @@ Check if the guessed letter is in the randomly chosen word. Two functions are de
 ```python
 """
 import random
-import string 
 
+word_list = ['watermelon', 'apple', 'strawberries', 'blueberries', 'grapes']
+
+word = random.choice(word_list)
 
 def check_guess(guess):
 
@@ -58,26 +56,17 @@ def check_guess(guess):
     else:
         print("Sorry,", guess,"is not in this word")
 
-
 def ask_for_input():
 
-  guess = input("Enter your guess: ") 
+    guess = input("Enter your guess: ") 
 
-  while len(guess) == 1 and guess in alphabet:
-    break
+    while len(guess) == 1 and guess.isalpha():
+        break
 
-  else:
-    print('Invalid letter. Please, enter a single alphabetical character.')
+    else:
+        print('Invalid letter. Please, enter a single alphabetical character.')
   
-  check_guess(guess)
-
-
-
-alphabet = list(string.ascii_lowercase)
-
-word_list = ['watermelon', 'apple', 'strawberries', 'blueberries', 'grapes']
-
-word = random.choice(word_list)
+    check_guess(guess)
 
 ask_for_input()
 ```
