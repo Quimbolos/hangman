@@ -1,7 +1,6 @@
 # %% 
-import random
-import string # TASK 4
 
+import random 
 
 guess = input("Enter your guess: ") # TASK 3
 
