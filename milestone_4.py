@@ -6,8 +6,8 @@ class Hangman():
         self.wordlist = wordlist
         self.num_lives = num_lives
         self.word = random.choice(self.wordlist)
-        self.world_guessed = ['_']*len(self.word)
-        self.num_letters = self.world_guessed.count('_')
+        self.word_guessed = ['_']*len(self.word)
+        self.num_letters = len(self.word_guessed)
         self.list_of_guesses = ['']
 
     def check_guess(self, guess):
@@ -16,6 +16,10 @@ class Hangman():
 
         if guess in self.word:
             print("Good guess!", guess,"is in the word")
+            for i in len(self.word):
+                if self.word[i] == guess:
+                    self.word_guessed[i] = self.word[i]
+            self.num_letters = self.num_letters - 1
 
         else:
             print("Sorry,", guess,"is not in this word")
