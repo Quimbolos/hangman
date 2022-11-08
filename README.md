@@ -34,8 +34,8 @@ else:
 word_list = ['watermelon', 'apple', 'strawberries', 'blueberries', 'grapes']
 # print(word_list) - TASK 1
 
-world = random.choice(word_list)
-# print(world) - TASK 2"""
+word = random.choice(word_list)
+# print(word) - TASK 2"""
 ```
 
 ## Milestone 3: Check if the guessed character is in the word
@@ -52,7 +52,7 @@ def check_guess(guess):
 
     guess = guess.lower()
 
-    if guess in world:
+    if guess in word:
         print("Good guess!", guess,"is in the word")
     
     else:
@@ -77,7 +77,7 @@ alphabet = list(string.ascii_lowercase)
 
 word_list = ['watermelon', 'apple', 'strawberries', 'blueberries', 'grapes']
 
-world = random.choice(word_list)
+word = random.choice(word_list)
 
 ask_for_input()
 ```

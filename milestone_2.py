@@ -20,7 +20,7 @@ else:
 word_list = ['watermelon', 'apple', 'strawberries', 'blueberries', 'grapes']
 # print(word_list) - TASK 1
 
-world = random.choice(word_list)
+word = random.choice(word_list)
 # print(world) - TASK 2
 
 

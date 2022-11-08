@@ -7,7 +7,7 @@ def check_guess(guess):
 
     guess = guess.lower()
 
-    if guess in world:
+    if guess in word:
         print("Good guess!", guess,"is in the word")
     
     else:
@@ -16,15 +16,15 @@ def check_guess(guess):
 
 def ask_for_input():
 
-  guess = input("Enter your guess: ") 
+    guess = input("Enter your guess: ") 
 
-  while len(guess) == 1 and guess in alphabet:
-    break
+    while len(guess) == 1 and guess in alphabet:
+        break
 
-  else:
-    print('Invalid letter. Please, enter a single alphabetical character.')
+    else:
+        print('Invalid letter. Please, enter a single alphabetical character.')
   
-  check_guess(guess)
+    check_guess(guess)
 
 
 
@@ -32,7 +32,7 @@ alphabet = list(string.ascii_lowercase)
 
 word_list = ['watermelon', 'apple', 'strawberries', 'blueberries', 'grapes']
 
-world = random.choice(word_list)
+word = random.choice(word_list)
 
 ask_for_input()
 
