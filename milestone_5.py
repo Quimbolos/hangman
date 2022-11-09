@@ -17,10 +17,12 @@ class Hangman():
 
         if guess in self.word:
             print("Good guess!", guess,"is in the word")
-            for i in len(self.word):
+            n_guess = 0
+            for i in range(len(self.word)):
                 if self.word[i] == guess:
+                    n_guess = n_guess + 1
                     self.word_guessed[i] = self.word[i]
-            self.num_letters = self.num_letters - 1
+            self.num_letters = self.num_letters - n_guess
 
         else:
             print("Sorry,", guess,"is not in this word")
@@ -51,12 +53,16 @@ def play_game(word_list):
     while True:
         if game.num_lives == 0:
             print('You lost!')
+            break
         elif game.num_letters > 0:
             game.ask_for_input()
-        elif game.num_lives != 0 and game.num_letters < 0:
+            print(game.word_guessed)
+        elif game.num_lives != 0 and game.num_letters == 0:
             print('Congratulations. You won the game!')
+            break
 
 word_list = ['watermelon', 'apple', 'strawberries', 'blueberries', 'grapes']
 
 play_game(word_list)
+# %%
 # %%

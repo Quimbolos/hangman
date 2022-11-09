@@ -16,10 +16,12 @@ class Hangman():
 
         if guess in self.word:
             print("Good guess!", guess,"is in the word")
+            n_guess = 0
             for i in range(len(self.word)):
                 if self.word[i] == guess:
+                    n_guess = n_guess + 1
                     self.word_guessed[i] = self.word[i]
-            self.num_letters = self.num_letters - 1
+            self.num_letters = self.num_letters - n_guess
 
         else:
             print("Sorry,", guess,"is not in this word")
