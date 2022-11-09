@@ -48,8 +48,8 @@ class Hangman():
             self.check_guess(guess)
 
 
-def play_game(word_list):
-    game = Hangman(word_list, num_lives = 5)
+def play_game(wordlist):
+    game = Hangman(wordlist, num_lives = 5)
     while True:
         if game.num_lives == 0:
             print('You lost!')
