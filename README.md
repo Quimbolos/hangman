@@ -47,25 +47,19 @@ word_list = ['watermelon', 'apple', 'strawberries', 'blueberries', 'grapes']
 word = random.choice(word_list)
 
 def check_guess(guess):
-
     guess = guess.lower()
-
     if guess in word:
         print("Good guess!", guess,"is in the word")
-    
     else:
         print("Sorry,", guess,"is not in this word")
 
 def ask_for_input():
-
-    guess = input("Enter your guess: ") 
-
-    while len(guess) == 1 and guess.isalpha():
-        break
-
-    else:
-        print('Invalid letter. Please, enter a single alphabetical character.')
-  
+    while True:
+        guess = input("Enter your guess: ") 
+        if len(guess) == 1 and guess.isalpha():
+            break
+        else:
+            print('Invalid letter. Please, enter a single alphabetical character.')
     check_guess(guess)
 
 ask_for_input()
@@ -80,6 +74,7 @@ Create a Hangman Class through Object Oriented Programming. A hangman class is c
 import random
 
 class Hangman():
+
     def __init__(self, wordlist, num_lives = 5):
         self.wordlist = wordlist
         self.num_lives = num_lives
@@ -89,9 +84,7 @@ class Hangman():
         self.list_of_guesses = ['']
 
     def check_guess(self, guess):
-
         guess = guess.lower()
-
         if guess in self.word:
             print("Good guess!", guess,"is in the word")
             n_guess = 0
@@ -100,33 +93,26 @@ class Hangman():
                     n_guess = n_guess + 1
                     self.word_guessed[i] = self.word[i]
             self.num_letters = self.num_letters - n_guess
-
         else:
             print("Sorry,", guess,"is not in this word")
             self.num_lives = self.num_lives - 1
             print("You have", self.num_lives,"lives left")
 
-        self.list_of_guesses.append(guess)
 
     def ask_for_input(self):
-
-        guess = input("Enter your guess: ") 
-
-        while len(guess) == 1 and guess.isalpha():
-            break
-
-        if len(guess) != 1 and guess.isalpha() == False:
-            print('Invalid letter. Please, enter a single alphabetical character.')
-        
-        elif guess in self.list_of_guesses:
-            print('You already tried that letter!')
-
-        else:
-            self.check_guess(guess)
+        while True:
+            guess = input("Enter your guess: ") 
+            if len(guess) != 1 and guess.isalpha() == False:
+                print('Invalid letter. Please, enter a single alphabetical character.')
+            elif guess in self.list_of_guesses:
+                print('You already tried that letter!')
+            else:
+                self.check_guess(guess)
+                self.list_of_guesses.append(guess)
 
 word_list = ['watermelon', 'apple', 'strawberries', 'blueberries', 'grapes']
 my_hangman = Hangman(word_list,5)
-Hangman.ask_for_input(my_hangman) 
+Hangman.ask_for_input(my_hangman)
 ```
 
 ## Milestone 5: Putting it all together
@@ -138,6 +124,7 @@ Create a function that takes the word_list as an argument. Within the function c
 import random
 
 class Hangman():
+    
     def __init__(self, wordlist, num_lives = 5):
         self.wordlist = wordlist
         self.num_lives = num_lives
@@ -147,9 +134,7 @@ class Hangman():
         self.list_of_guesses = ['']
 
     def check_guess(self, guess):
-
         guess = guess.lower()
-
         if guess in self.word:
             print("Good guess!", guess,"is in the word")
             n_guess = 0
@@ -158,29 +143,22 @@ class Hangman():
                     n_guess = n_guess + 1
                     self.word_guessed[i] = self.word[i]
             self.num_letters = self.num_letters - n_guess
-
         else:
             print("Sorry,", guess,"is not in this word")
             self.num_lives = self.num_lives - 1
             print("You have", self.num_lives,"lives left")
 
-        self.list_of_guesses.append(guess)
 
     def ask_for_input(self):
-
-        guess = input("Enter your guess: ") 
-
-        while len(guess) == 1 and guess.isalpha():
-            break
-
-        if len(guess) != 1 and guess.isalpha() == False:
-            print('Invalid letter. Please, enter a single alphabetical character.')
-        
-        elif guess in self.list_of_guesses:
-            print('You already tried that letter!')
-
-        else:
-            self.check_guess(guess)
+        while True:
+            guess = input("Enter your guess: ") 
+            if len(guess) != 1 and guess.isalpha() == False:
+                print('Invalid letter. Please, enter a single alphabetical character.')
+            elif guess in self.list_of_guesses:
+                print('You already tried that letter!')
+            else:
+                self.check_guess(guess)
+                self.list_of_guesses.append(guess)
 
 
 def play_game(wordlist):
@@ -198,5 +176,5 @@ def play_game(wordlist):
 
 word_list = ['watermelon', 'apple', 'strawberries', 'blueberries', 'grapes']
 
-play_game(word_list) 
+play_game(word_list)
 ```
