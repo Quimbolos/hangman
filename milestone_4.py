@@ -1,6 +1,6 @@
 # %%
 import random
-import string
+
 class Hangman():
     def __init__(self, wordlist, num_lives = 5):
         self.wordlist = wordlist
@@ -16,7 +16,7 @@ class Hangman():
 
         if guess in self.word:
             print("Good guess!", guess,"is in the word")
-            for i in len(self.word):
+            for i in range(len(self.word)):
                 if self.word[i] == guess:
                     self.word_guessed[i] = self.word[i]
             self.num_letters = self.num_letters - 1
@@ -32,12 +32,10 @@ class Hangman():
 
         guess = input("Enter your guess: ") 
 
-        alphabet = list(string.ascii_lowercase)
-
-        while len(guess) == 1 and guess in alphabet:
+        while len(guess) == 1 and guess.isalpha():
             break
 
-        if len(guess) != 1 and guess not in alphabet:
+        if len(guess) != 1 and guess.isalpha() == False:
             print('Invalid letter. Please, enter a single alphabetical character.')
         
         elif guess in self.list_of_guesses:
@@ -49,6 +47,7 @@ class Hangman():
 word_list = ['watermelon', 'apple', 'strawberries', 'blueberries', 'grapes']
 my_hangman = Hangman(word_list,5)
 Hangman.ask_for_input(my_hangman)
+
 
 
 # %%
