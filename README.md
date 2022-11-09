@@ -12,7 +12,7 @@ Create a new GitHub repo to upload the code and allow version control throught t
 Create the variables for the hangman using basic python commands. For each TASK, changes in the code are commited and pushed to the GitHub repo.
 
 ```python
-"""
+
 import random 
 
 guess = input("Enter your guess: ") # TASK 3
@@ -31,7 +31,7 @@ word_list = ['watermelon', 'apple', 'strawberries', 'blueberries', 'grapes']
 # print(word_list) - TASK 1
 
 word = random.choice(word_list)
-# print(world) - TASK 2"""
+# print(world) - TASK 2
 ```
 
 ## Milestone 3: Check if the guessed character is in the word
@@ -39,7 +39,7 @@ word = random.choice(word_list)
 Check if the guessed letter is in the randomly chosen word. Two functions are defined, one to check if the guess is in the chosen word, and another one to check if the guess input is valid. Again, for each TASK, changes in the code are commited and pushed to the GitHub repo.
 
 ```python
-"""
+
 import random
 
 word_list = ['watermelon', 'apple', 'strawberries', 'blueberries', 'grapes']
@@ -68,7 +68,7 @@ def ask_for_input():
   
     check_guess(guess)
 
-ask_for_input()"""
+ask_for_input()
 ```
 
 ## Milestone 4: Create the Game Class
@@ -76,9 +76,9 @@ ask_for_input()"""
 Create a Hangman Class through Object Oriented Programming. A hangman class is created and its attributes are inistialised. After that, methods are created to run checks and define what happens when the letter/guess is in the word and when the letter/guess is not in the word. Again, for each TASK, changes in the code are commited and pushed to the GitHub repo.
 
 ```python
-"""
+
 import random
-import string
+
 class Hangman():
     def __init__(self, wordlist, num_lives = 5):
         self.wordlist = wordlist
@@ -94,10 +94,12 @@ class Hangman():
 
         if guess in self.word:
             print("Good guess!", guess,"is in the word")
-            for i in len(self.word):
+            n_guess = 0
+            for i in range(len(self.word)):
                 if self.word[i] == guess:
+                    n_guess = n_guess + 1
                     self.word_guessed[i] = self.word[i]
-            self.num_letters = self.num_letters - 1
+            self.num_letters = self.num_letters - n_guess
 
         else:
             print("Sorry,", guess,"is not in this word")
@@ -110,12 +112,10 @@ class Hangman():
 
         guess = input("Enter your guess: ") 
 
-        alphabet = list(string.ascii_lowercase)
-
-        while len(guess) == 1 and guess in alphabet:
+        while len(guess) == 1 and guess.isalpha():
             break
 
-        if len(guess) != 1 and guess not in alphabet:
+        if len(guess) != 1 and guess.isalpha() == False:
             print('Invalid letter. Please, enter a single alphabetical character.')
         
         elif guess in self.list_of_guesses:
@@ -126,7 +126,7 @@ class Hangman():
 
 word_list = ['watermelon', 'apple', 'strawberries', 'blueberries', 'grapes']
 my_hangman = Hangman(word_list,5)
-Hangman.ask_for_input(my_hangman) """
+Hangman.ask_for_input(my_hangman) 
 ```
 
 ## Milestone 5: Putting it all together
@@ -134,7 +134,7 @@ Hangman.ask_for_input(my_hangman) """
 Create a function that takes the word_list as an argument. Within the function create an instance (game) of the previously created Hangman class. In addition, as while loop is created to continously ask the user for input until he wins or loses the hangmane game. Again, for each TASK, changes in the code are commited and pushed to the GitHub repo.
 
 ```python
-"""
+
 import random
 
 class Hangman():
@@ -198,5 +198,5 @@ def play_game(wordlist):
 
 word_list = ['watermelon', 'apple', 'strawberries', 'blueberries', 'grapes']
 
-play_game(word_list) """
+play_game(word_list) 
 ```
