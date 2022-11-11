@@ -146,14 +146,14 @@ class Hangman():
 
 
     def ask_for_input(self):
-            guess = input("Enter your guess: ") 
-            if len(guess) != 1 and guess.isalpha() == False:
-                print('Invalid letter. Please, enter a single alphabetical character.')
-            elif guess in self.list_of_guesses:
-                print('You already tried that letter!')
-            else:
-                self.check_guess(guess)
-                self.list_of_guesses.append(guess)
+        guess = input("Enter your guess: ") 
+        if len(guess) != 1 and guess.isalpha() == False:
+            print('Invalid letter. Please, enter a single alphabetical character.')
+        elif guess in self.list_of_guesses:
+            print('You already tried that letter!')
+        else:
+            self.check_guess(guess)
+            self.list_of_guesses.append(guess)
 
 
 def play_game(wordlist):
