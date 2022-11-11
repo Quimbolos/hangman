@@ -38,8 +38,8 @@ class Hangman():
                 self.check_guess(guess)
                 self.list_of_guesses.append(guess)
 
-word_list = ['watermelon', 'apple', 'strawberries', 'blueberries', 'grapes']
-my_hangman = Hangman(word_list,5)
+word_list_ = ['watermelon', 'apple', 'strawberries', 'blueberries', 'grapes']
+my_hangman = Hangman(word_list_,5)
 Hangman.ask_for_input(my_hangman)
 
 
