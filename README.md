@@ -71,28 +71,24 @@ Create a Hangman Class through Object Oriented Programming. A hangman class is c
 
 ```python
 
-import random
-
 class Hangman():
 
-    def __init__(self, wordlist, num_lives = 5):
-        self.wordlist = wordlist
+    def __init__(self, word_list, num_lives = 5):
+        self.word_list = word_list
         self.num_lives = num_lives
-        self.word = random.choice(self.wordlist)
+        self.word = random.choice(self.word_list)
         self.word_guessed = ['_']*len(self.word)
-        self.num_letters = len(self.word_guessed)
+        self.num_letters = len(set(self.word_guessed))
         self.list_of_guesses = ['']
 
     def check_guess(self, guess):
         guess = guess.lower()
         if guess in self.word:
             print("Good guess!", guess,"is in the word")
-            n_guess = 0
             for i in range(len(self.word)):
                 if self.word[i] == guess:
-                    n_guess = n_guess + 1
                     self.word_guessed[i] = self.word[i]
-            self.num_letters = self.num_letters - n_guess
+            self.num_letters = self.num_letters - 1
         else:
             print("Sorry,", guess,"is not in this word")
             self.num_lives = self.num_lives - 1
@@ -110,9 +106,10 @@ class Hangman():
                 self.check_guess(guess)
                 self.list_of_guesses.append(guess)
 
-word_list = ['watermelon', 'apple', 'strawberries', 'blueberries', 'grapes']
-my_hangman = Hangman(word_list,5)
+word_list_ = ['watermelon', 'apple', 'strawberries', 'blueberries', 'grapes']
+my_hangman = Hangman(word_list_,5)
 Hangman.ask_for_input(my_hangman)
+
 ```
 
 ## Milestone 5: Putting it all together
@@ -130,19 +127,18 @@ class Hangman():
         self.num_lives = num_lives
         self.word = random.choice(self.wordlist)
         self.word_guessed = ['_']*len(self.word)
-        self.num_letters = len(self.word_guessed)
+        self.num_letters = len(set(self.word))
         self.list_of_guesses = ['']
 
     def check_guess(self, guess):
         guess = guess.lower()
         if guess in self.word:
             print("Good guess!", guess,"is in the word")
-            n_guess = 0
             for i in range(len(self.word)):
                 if self.word[i] == guess:
-                    n_guess = n_guess + 1
                     self.word_guessed[i] = self.word[i]
-            self.num_letters = self.num_letters - n_guess
+            self.num_letters = self.num_letters - 1
+
         else:
             print("Sorry,", guess,"is not in this word")
             self.num_lives = self.num_lives - 1
@@ -150,7 +146,6 @@ class Hangman():
 
 
     def ask_for_input(self):
-        while True:
             guess = input("Enter your guess: ") 
             if len(guess) != 1 and guess.isalpha() == False:
                 print('Invalid letter. Please, enter a single alphabetical character.')
@@ -177,4 +172,5 @@ def play_game(wordlist):
 word_list = ['watermelon', 'apple', 'strawberries', 'blueberries', 'grapes']
 
 play_game(word_list)
+
 ```
