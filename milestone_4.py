@@ -35,7 +35,6 @@ class Hangman():
             else:
                 self.check_guess(guess)
                 self.list_of_guesses.append(guess)
-                print(self.word_guessed)
                 break
 
 word_list_ = ['watermelon', 'apple', 'strawberries', 'blueberries', 'grapes']
