@@ -72,6 +72,8 @@ Create a Hangman Class through Object Oriented Programming. A hangman class is c
 
 ```python
 
+import random
+
 class Hangman():
 
     def __init__(self, word_list, num_lives = 5):
@@ -85,13 +87,13 @@ class Hangman():
     def check_guess(self, guess):
         guess = guess.lower()
         if guess in self.word:
-            print("Good guess! {guess} is in the word.")
+            print("Good guess!", guess ,"is in the word.")
             for i in range(len(self.word)):
                 if self.word[i] == guess:
                     self.word_guessed[i] = self.word[i]
             self.num_letters = self.num_letters - 1
         else:
-            print("Sorry, {guess} is not in the word. Try again.")
+            print("Sorry,", guess ,"is not in the word. Try again.")
             self.num_lives = self.num_lives - 1
             print("You have", self.num_lives,"lives left")
 
@@ -106,6 +108,9 @@ class Hangman():
             else:
                 self.check_guess(guess)
                 self.list_of_guesses.append(guess)
+                print(self.word_guessed)
+                if self.num_letters == 0:
+                    break
 
 word_list_ = ['watermelon', 'apple', 'strawberries', 'blueberries', 'grapes']
 my_hangman = Hangman(word_list_,5)
