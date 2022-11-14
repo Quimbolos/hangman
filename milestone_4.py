@@ -22,7 +22,7 @@ class Hangman():
         else:
             print("Sorry,", guess ,"is not in the word.")
             self.num_lives = self.num_lives - 1
-            print("You have", self.num_lives ,"lives left")
+            print("You have", self.num_lives ,"lives left.")
 
 
     def ask_for_input(self):
