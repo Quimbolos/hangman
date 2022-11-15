@@ -1,15 +1,15 @@
 # Hangman
 
-> AiCore start project to introduce Python and Git skills - endgoal: create a Hangman game.
+> AiCore starting project to introduce Python and Git skills - end goal: create a Hangman game.
 
 ## Milestone 1: Set up the environment
 
-Create a new GitHub repo to upload the code and allow version control throught the project.
+Create a new GitHub repo to upload the code and allow version control throughout the project.
 
 
 ## Milestone 2: Create the variables for the Game
 
-Create the variables for the hangman using basic python commands. For each TASK, changes in the code are commited and pushed to the GitHub repo.
+Create the variables for the hangman using basic python commands. For each TASK, changes in the code are committed and pushed to the GitHub repo.
 
 ```python
 
@@ -31,12 +31,12 @@ word_list = ['watermelon', 'apple', 'strawberries', 'blueberries', 'grapes']
 # print(word_list) - TASK 1
 
 word = random.choice(word_list)
-# print(world) - TASK 2
+# print(world) - TASK 2
 ```
 
 ## Milestone 3: Check if the guessed character is in the word
 
-Check if the guessed letter is in the randomly chosen word. Two functions are defined, one to check if the guess is in the chosen word, and another one to check if the guess input is valid. Again, for each TASK, changes in the code are commited and pushed to the GitHub repo.
+Check if the guessed letter is in the randomly chosen word. Two functions are defined, one to check if the guess is in the chosen word and another to check if the guess input is valid. Again, changes in the code are committed and pushed to the GitHub repo for each TASK.
 
 ```python
 
@@ -68,7 +68,7 @@ ask_for_input()
 
 ## Milestone 4: Create the Game Class
 
-Create a Hangman Class through Object Oriented Programming. A hangman class is created and its attributes are inistialised. After that, methods are created to run checks and define what happens when the letter/guess is in the word and when the letter/guess is not in the word. Again, for each TASK, changes in the code are commited and pushed to the GitHub repo.
+Create a Hangman Class through Object Oriented Programming. A hangman class is created, and its attributes are initialised. After that, methods are created to run checks and define what happens when the letter/guess is in the word and when the letter/guess is not in the word. Again, changes in the code are committed and pushed to the GitHub repo for each TASK.
 
 ```python
 
@@ -118,7 +118,7 @@ Hangman.ask_for_input(my_hangman)
 
 ## Milestone 5: Putting it all together
 
-Create a function that takes the word_list as an argument. Within the function create an instance (game) of the previously created Hangman class. In addition, as while loop is created to continously ask the user for input until he wins or loses the hangmane game. Again, for each TASK, changes in the code are commited and pushed to the GitHub repo.
+Create a function that takes the word_list as an argument. Within the function, create an instance (game) of the previously created Hangman class. In addition, a while loop is created to continuously ask the user for input until he wins or loses the hangman game. Again, changes in the code are committed and pushed to the GitHub repo for each TASK.
 
 ```python
 
